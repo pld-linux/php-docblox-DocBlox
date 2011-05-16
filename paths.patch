@@ -1,0 +1,24 @@
+--- DocBlox-0.10.0/usr/share/pear/DocBlox/Core/Abstract.php~	2011-05-16 15:36:28.000000000 +0300
++++ DocBlox-0.10.0/usr/share/pear/DocBlox/Core/Abstract.php	2011-05-16 15:36:29.847690920 +0300
+@@ -260,7 +260,7 @@
+   {
+     if (self::$config === null)
+     {
+-      self::$config = new DocBlox_Core_Config(dirname(__FILE__) . '/../../../data/docblox.tpl.xml');
++      self::$config = new DocBlox_Core_Config(dirname(__FILE__) . '/../../data/DocBlox/docblox.tpl.xml');
+     }
+ 
+     return self::$config;
+--- DocBlox-0.10.0/usr/share/pear/DocBlox/Core/Config.php~	2011-05-16 15:42:43.000000000 +0300
++++ DocBlox-0.10.0/usr/share/pear/DocBlox/Core/Config.php	2011-05-16 15:42:46.778661119 +0300
+@@ -32,8 +32,8 @@
+       $this->paths = new Zend_Config(array(), true);
+     }
+ 
+-    $this->paths->application = realpath(dirname(__FILE__) . '/../../..');
+-    $this->paths->data        = realpath($this->paths->application . '/data');
++    $this->paths->application = realpath(dirname(__FILE__) . '/..');
++    $this->paths->data        = realpath(dirname($this->paths->application) . '/data/'.basename($this->paths->application));
+     $this->paths->templates   = realpath($this->paths->data . '/themes');
+     $this->paths->themes      = $this->paths->templates;
+     $this->mergeTemplateConfigurations();

@@ -8,11 +8,12 @@
 Summary:	%{pearname} - PHP 5.3 compatible API Documentation generator aimed at projects of all sizes and Continuous Integration
 Name:		php-docblox-DocBlox
 Version:	0.10.0
-Release:	0.1
+Release:	0.3
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.docblox-project.org/get/%{pearname}-%{version}.tgz
 # Source0-md5:	ce67ba9e42a66bec3df8225968ddd19a
+Patch0:		paths.patch
 URL:		http://pear.docblox-project.org/package/DocBlox/
 BuildRequires:	php-channel(pear.docblox-project.org)
 BuildRequires:	php-packagexml2cl
@@ -63,6 +64,8 @@ mv DocBlox/docs/TODO .
 
 # ELF binary blobs?!
 rm -rf DocBlox/src/wkhtmltopdf
+
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
