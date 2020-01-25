@@ -4,7 +4,6 @@
 %define		status		beta
 %define		pearname	DocBlox
 %define		php_min_version  5.2.1
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - PHP 5.3 compatible API Documentation generator aimed at projects of all sizes and Continuous Integration
 Name:		php-docblox-DocBlox
 Version:	0.10.0
