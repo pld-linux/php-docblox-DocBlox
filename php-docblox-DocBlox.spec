@@ -64,7 +64,7 @@ mv DocBlox/docs/TODO .
 # ELF binary blobs?!
 rm -rf DocBlox/src/wkhtmltopdf
 
-%patch0 -p1
+%patch -P0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
